@@ -1,8 +1,6 @@
-local helper = require("gx.helper")
-
 ---@type GxHandler
 local M = {
-  -- every filetype and filename
+  -- every filename but only `.exs` files
   name = "elixir",
   filetype = { "exs" },
   filename = nil,

@@ -1,5 +1,6 @@
 local helper = require("gx.helper")
 local brewfile_handler = require("gx.handlers.brewfile")
+local elixir_handler = require("gx.handlers.elixir")
 local package_json_handler = require("gx.handlers.package_json")
 local plugin_handler = require("gx.handlers.plugin")
 local url_handler = require("gx.handlers.url")
@@ -41,6 +42,7 @@ local function resolve_handlers(handlers)
 
   -- ### add here new handlers
   add_handler(resolved, brewfile_handler, handlers.brewfile and exists.brewfile == nil)
+  add_handler(resolved, elixir_handler, handlers.elixir and exists.elixir == nil)
   add_handler(resolved, package_json_handler, handlers.package_json and exists.package_json == nil)
   add_handler(resolved, plugin_handler, handlers.plugin and exists.plugin == nil)
   add_handler(resolved, github_handler, handlers.github and exists.github == nil)
